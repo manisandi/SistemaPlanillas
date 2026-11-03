@@ -1,0 +1,31 @@
+﻿@model List<SistemaPlanillas.Models.Empleado>
+
+<h1>Empleados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido 1</th>
+            <th>Apellido 2</th>
+            <th>ID Departamento</th>
+            <th>ID Puesto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var empleado in Model)
+        {
+            <tr>
+                <td>@empleado.IdEmpleado</td>
+                <td>@empleado.Cedula</td>
+                <td>@empleado.Nombre</td>
+                <td>@empleado.Apellido1</td>
+                <td>@empleado.Apellido2</td>
+                <td>@empleado.IdDepartamento</td>
+                <td>@empleado.IdPuesto</td>
+            </tr>
+        }
+    </tbody>
+</table>

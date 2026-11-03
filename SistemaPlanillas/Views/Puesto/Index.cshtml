@@ -1,0 +1,25 @@
+﻿@model List<SistemaPlanillas.Models.Puesto>
+
+<h1>Puestos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Puesto</th>
+            <th>Salario Base</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var puesto in Model)
+        {
+            <tr>
+                <td>@puesto.IdPuesto</td>
+                <td>@puesto.NombrePuesto</td>
+                <td>₡ @puesto.SalarioBase</td>
+                <td>@puesto.Descripcion</td>
+            </tr>
+        }
+    </tbody>
+</table>
