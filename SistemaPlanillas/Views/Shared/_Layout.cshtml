@@ -1,88 +1,155 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SistemaPlanillas</title>
-    <script type="importmap"></script>
+    <title>@ViewData["Title"] - Sistema Planillas</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SistemaPlanillas.styles.css" asp-append-version="true" />
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SistemaPlanillas</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
 
-                    <ul class="navbar-nav flex-grow-1">
+    <!-- FRANJA SUPERIOR -->
+    <header class="topbar">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-area=""
-                               asp-controller="Home"
-                               asp-action="Index">
-                                Home
-                            </a>
-                        </li>
+        <div class="logo-area">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-area=""
-                               asp-controller="Home"
-                               asp-action="Privacy">
-                                Privacy
-                            </a>
-                        </li>
+            <img src="~/images/logo-hojancha.png"
+                 alt="Logo Municipalidad"
+                 class="logo-muni" />
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller="Departamento"
-                               asp-action="Index">
-                                Departamento
-                            </a>
-                        </li>
+            
+        <div class="texto-muni">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller="Empleado"
-                               asp-action="Index">
-                                Empleado
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark"
-                               asp-controller="Puesto"
-                               asp-action="Index">
-                                Puesto
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
+            <div class="municipalidad">
+                MUNICIPALIDAD DE
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+            <div class="hojancha">
+                HOJANCHA
+            </div>
+
+            <div class="subtitulo-muni">
+                Tierra de gente buena
+            </div>
+
+        </div>
+
+         </div>
+
+    <div class="top-links">
+        <span>Servicio</span>
+        <span>•</span>
+        <span>Transparencia</span>
+        <span>•</span>
+        <span>Desarrollo</span>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - SistemaPlanillas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </header>
+
+    <!-- CUERPO -->
+    <div class="d-flex">
+
+        <!-- MENÚ LATERAL -->
+        <div class="bg-primary text-white p-3"
+             style="width:240px; min-height:calc(100vh - 90px);">
+
+            <ul class="nav flex-column">
+
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white"
+                       asp-controller="Home"
+                       asp-action="Index">
+
+                       <img src="~/images/pagina-de-inicio.png"
+         class="menu-icon" />
+
+                         Inicio
+                    </a>
+                </li>
+
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white"
+                       asp-controller="Empleado"
+                       asp-action="Index">
+
+                       <img src="~/images/empleado.png"
+         class="menu-icon" />
+
+                          Empleados
+                    </a>
+                </li>
+
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white"
+                       asp-controller="Puesto"
+                       asp-action="Index">
+
+                       <img src="~/images/maletin.png"
+         class="menu-icon" />
+
+                         Puestos
+                    </a>
+                </li>
+
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white"
+                       asp-controller="Departamento"
+                       asp-action="Index">
+
+                       <img src="~/images/Configuracion.png"
+         class="menu-icon" />
+
+                         Departamentos
+                    </a>
+                </li>
+
+                <li class="nav-item mb-2">
+    <a class="nav-link text-white"
+       asp-controller="Reportes"
+       asp-action="Index">
+
+                       <img src="~/images/reporte.png"
+         class="menu-icon" />
+
+        Reportes
+
+    </a>
+</li>
+
+<li class="nav-item mb-2">
+    <a class="nav-link text-white"
+       asp-controller="Configuracion"
+       asp-action="Index">
+        
+                       <img src="~/images/Departamentos.png"
+         class="menu-icon" />
+
+      Configuración
+
+    </a>
+</li>
+            </ul>
+
         </div>
-    </footer>
+
+        <!-- CONTENIDO -->
+        <div class="container-fluid p-4">
+
+            @RenderBody()
+
+        </div>
+
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
